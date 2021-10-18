@@ -1,0 +1,31 @@
+#端口号及项目前缀
+server:
+  port: 18081
+  servlet:
+    context-path: /paper-check
+
+#数据库连接
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+    cache: false
+    check-template-location: true
+    mode: HTML5
+  datasource:
+    username: root
+    password: 123456
+    #    hnjg-cms?
+    url: jdbc:mysql://localhost:3306/qykj_jsjk?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #配置jsp路径
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .*
+
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yx.paper.entity
